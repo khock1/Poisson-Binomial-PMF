@@ -45,7 +45,7 @@ for k = 1:n_trials
     num_successes(k+1).k = k;
     num_successes(k+1).prob_k_successes = this_cmlprob;
 end
-% add an additional category for all fails/zero successes
+% add an additional category for all failures/zero successes
 num_successes(1).k = 0;
 % determine the chance of obtaining k=0 successes by subtracting the sum of all other probabilities from 1;
 % unlike the probabilities of success in individual trials, all probabilities of obtaining 
@@ -54,7 +54,11 @@ num_successes(1).prob_k_successes = 1 - sum([num_successes(2:end).prob_k_success
 
 % num_sucesses structure answers the question "what is the probability of
 % obtaining exactly k sucesses given the independent success probabilities in 
-% individual trials/events?"
+% individual trials/events?"; draw a bar plot of the PMF
+bar(0:n_trials, [num_successes.prob_k_successes]);
+title('Poisson Binomial PMF', 'FontSize', 11);
+xlabel('k successes');
+ylabel('Probability of k successes');
 
 % finally, check that it all really adds up to 1
 total_cmlprobability = sum([num_successes.prob_k_successes]);
