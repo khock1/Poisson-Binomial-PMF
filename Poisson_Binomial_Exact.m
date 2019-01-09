@@ -19,7 +19,7 @@ num_successes=struct('k', [], 'prob_k_successes', []);
 
 % calculate the chance of obtaining any number of successes (up to n_trials)
 for k = 1:n_trials
-    this_k = nchoosek(1:n_trials, k);% list all combinations of having S number of successes
+    this_k = nchoosek(1:n_trials, k);% list all combinations of having k number of successes
     this_cmlprob = 0;% storing the cumulative probability of k sucesses
     % now determine the probability of obtaining each combination of
     % k successes given the success probabilities inindividual trials
