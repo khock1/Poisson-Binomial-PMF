@@ -54,7 +54,7 @@ num_successes(1).prob_k_successes = 1 - sum([num_successes(2:end).prob_k_success
 
 % num_sucesses structure answers the question "what is the probability of
 % obtaining exactly k sucesses given the independent success probabilities in 
-% individual trials/events?"; draw a bar plot of the PMF
+% individual trials/events?"; draw a bar graph of the PMF
 bar(0:n_trials, [num_successes.prob_k_successes]);
 title('Poisson Binomial PMF', 'FontSize', 11);
 xlabel('k successes');
