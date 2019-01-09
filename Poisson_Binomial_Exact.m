@@ -9,13 +9,13 @@
 % independent, the individual probabilities need not add up to 1
 
 % probabilities of success in individual Bernoulli trials; values used as a demonstration example
-success_probabilities=[0.25 0.15 0.05 0.1 0.8];
+success_probabilities = [0.25 0.15 0.05 0.1 0.8];
 
 % number of trials
-n_trials=length(success_probabilities);
+n_trials = length(success_probabilities);
 
 % container for storing results on k number of successes
-num_successes=struct('k', [], 'prob_k_successes', []);
+num_successes = struct('k', [], 'prob_k_successes', []);
 
 % calculate the chance of obtaining any number of successes (up to n_trials)
 for k = 1:n_trials
